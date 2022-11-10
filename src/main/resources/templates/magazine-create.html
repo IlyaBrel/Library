@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link href="../static/like.css" th:href="@{like.css}" rel="stylesheet" media="screen"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Create magazine</title>
+</head>
+<body>
+
+
+<div align="center">
+
+    <h1>Create New Magazine</h1>
+    <br/>
+    <form action="#" th:action="@{/magazine-create}" th:object="${magazine}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Book Name:</td>
+                <td><input type="text" th:field="*{magazineName}" id="magazineName" placeholder="Magazine name" required ></td>
+            </tr>
+            <tr>
+                <td>Data of publication:</td>
+                <td><input type="text" th:field="*{dataOfPublication}" id="dataOfPublication"
+                           placeholder="Data of publication" required></td>
+            </tr>
+            <tr>
+                <td>Author:</td>
+                <td><input type="text" th:field="*{author}" id="author" placeholder="Author" required></td>
+            </tr>
+            <tr>
+                <td>Publisher:</td>
+                <td><input type="text" th:field="*{publisher}" id="publisher" placeholder="Publisher" required></td>
+            </tr>
+
+        </table>
+        <input class="buttons" type="submit" value="Create magazine">
+    </form>
+</div>
+
+
+</body>
+</html>

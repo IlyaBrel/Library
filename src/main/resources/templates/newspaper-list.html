@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link href="../static/like.css" th:href="@{like.css}" rel="stylesheet" media="screen"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Newspaper</title>
+</head>
+<body>
+
+<div align="center">
+
+    <div th:switch="${newspapers}">
+        <h2 th:case="null">No users found!</h2>
+        <div th:case="*">
+
+            <p><a class="buttons" href="/magazines">Open magazines</a> <a class="buttons" href="/books">Open books</a> </p>
+
+
+            <h2>Newspaper</h2>
+
+            <form th:switch="${newspapers}">
+                Filter: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required/>
+                &nbsp;
+                <input  class="button-action" type="submit" value="Search"/>
+                &nbsp;
+                <input class="button-action" type="button" value="Clear" id="btnClear" onclick="clearSearch()"/>
+            </form>
+
+            <table border="1" cellpadding="10">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Newspaper Name</th>
+                    <th>Data of publication</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="newspaper : ${newspapers}">
+                    <td th:text="${newspaper.id}"></td>
+                    <td th:text="${newspaper.newspaperName}"></td>
+                    <td th:text="${newspaper.dataOfPublication}"></td>
+                    <td th:text="${newspaper.author}"></td>
+                    <td th:text="${newspaper.publisher}"></td>
+                    <td>
+                        <a class="button-crud" th:href="@{newspaper-update/{id}(id=${newspaper.id})}">Edit</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="button-crud" th:href="@{newspaper-delete/{id}(id=${newspaper.id})}">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <p><a class="buttons" href="/newspaper-create">Create newspaper</a></p>
+
+    </div>
+</div>
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{newspapers}]]";
+    }
+</script>
+</body>
+</html>
+
