@@ -49,3 +49,13 @@ CREATE TABLE `newspapers` (
 INSERT INTO `newspapers` (`id`, `newspaper_name`, `date_of_publication`, `author`, `publisher`) VALUES
 (4,	'ммцц',	'ммм',	'мм',	'мм'),
 (5,	'пкп',	'кпап',	'апап',	'апап');
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/101255148/200988406-15e6fcc2-5752-4614-8b3e-00bd5b810382.png)
+![image](https://user-images.githubusercontent.com/101255148/200988610-724ab61d-242b-4825-ad79-d173a41e2da1.png)
+
+![image](https://user-images.githubusercontent.com/101255148/200988532-49d9929a-a2e8-46cf-8aa3-a32b13e7514a.png)
+
